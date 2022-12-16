@@ -1,0 +1,10 @@
+com\compunet\modelo\NewMain.class
+com\compunet\acceso\Proveedores.class
+com\compunet\acceso\Usuarios.class
+com\compunet\acceso\Productos.class
+com\compunet\servlet\ClientesServlet.class
+com\compunet\servlet\ProductosServlet.class
+com\compunet\servlet\ProveedoresServlet.class
+com\compunet\servlet\UsuariosServlet.class
+com\compunet\modelo\CBDD.class
+com\compunet\acceso\Clientes.class
