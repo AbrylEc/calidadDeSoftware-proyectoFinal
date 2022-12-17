@@ -33,24 +33,20 @@ function readProductos() {
 function insertarProductos() {
     let idProveedores = document.getElementById('txtIp');
     let nombre = document.getElementById('txtNom');
-    let descripcion = document.getElementById('txtDescripcion');
     let valorCompra = document.getElementById('txtValCom');
     let valorVenta = document.getElementById('txtValVen');
     let stock = document.getElementById('txtStock');
     let tieneIva = document.getElementById('txtIva');
-    let tipoProd = document.getElementById('txtTipoProd');
 
     $.ajax({
         data: {
             "crud": "in",
             "numIp": idProveedores.value,
             "txtN": nombre.value,
-            "txtD": descripcion.value,
             "decVc": valorCompra.value,
             "decVv": valorVenta.value,
             "numS": stock.value,
-            "txtTi": tieneIva.value,
-            "txtTp": tipoProd.value
+            "txtTi": tieneIva.value
         },
 
         url: "./ProductosS",
@@ -73,12 +69,11 @@ function insertarProductos() {
     });
 }
 
-function cargarDatosActualizar(id, ip, n, d, vc, vv, s, ti, tp) {
+function cargarDatosActualizar(id, ip, n, vc, vv, s, ti) {
     /*Estos id salen del modal de actualizar*/
     document.getElementById('numIdUp').value = id;
     document.getElementById('numIpUp').value = ip;
     document.getElementById('txtNomUp').value = n;
-    document.getElementById('txtDescripcionUp').value = d;
     document.getElementById('txtValComUp').value = vc;
     document.getElementById('txtValVenUp').value = vv;
     document.getElementById('txtStockUp').value = s;
@@ -98,12 +93,10 @@ function updateProductos() {
     let id = document.getElementById("numIdUp").value;
     let ip = document.getElementById('numIpUp').value;
     let n = document.getElementById("txtNomUp").value;
-    let d = document.getElementById("txtDescripcionUp").value;
     let vc = document.getElementById("txtValComUp").value;
     let vv = document.getElementById("txtValVenUp").value;
     let s = document.getElementById("txtStockUp").value;
     let ti = document.getElementById("txtIvaUp").value;
-    let tp = document.getElementById("txtTipoProdUp").value;
 
     $.ajax({
         data: {
@@ -112,12 +105,10 @@ function updateProductos() {
             "numId": id,
             "numIp": ip,
             "txtN": n,
-            "txtD": d,
             "decVc": vc,
             "decVv": vv,
             "numS": s,
-            "txtTi": ti,
-            "txtTp": tp
+            "txtTi": ti
 
         },
         url: "./ProductosS",

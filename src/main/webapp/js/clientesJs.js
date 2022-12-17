@@ -32,8 +32,6 @@ function readClientes() {
 
 function insertarClientes() {
     let cedula = document.getElementById('txtCi');
-    let numeroDeCuenta = document.getElementById('txtNdc');
-    let saldo = document.getElementById('txtSaldo');
     let nombre = document.getElementById('txtNom');
     let apellido = document.getElementById('txtApe');
     let direccion = document.getElementById('txtDir');
@@ -43,8 +41,6 @@ function insertarClientes() {
         data: {
             "crud": "in",
             "txtCi": cedula.value,
-            "txtNdc": numeroDeCuenta.value,
-            "txtSaldo": saldo.value,
             "txtNom": nombre.value,
             "txtApe": apellido.value,
             "txtDir": direccion.value,
@@ -70,13 +66,11 @@ function insertarClientes() {
     });
 }
 
-function cargarDatosActualizar(id, ci, ndc, saldo, nom, ape, dir, tel) {
+function cargarDatosActualizar(id, ci, nom, ape, dir, tel) {
     /*Estos id salen del modal de actualizar*/
 
     document.getElementById("numIdUp").value = id;
     document.getElementById('txtCiUp').value = ci;
-    document.getElementById('txtNdcUp').value = ndc;
-    document.getElementById('txtSaldoUp').value = saldo;
     document.getElementById('txtNomUp').value = nom;
     document.getElementById('txtApeUp').value = ape;
     document.getElementById('txtDirUp').value = dir;
@@ -88,8 +82,6 @@ function updateClientes() {
      clientesVista*/
     let id = document.getElementById("numIdUp").value;
     let ci = document.getElementById('txtCiUp').value;
-    let ndc = document.getElementById('txtNdcUp').value;
-    let saldo = document.getElementById('txtSaldoUp').value;
     let nom = document.getElementById('txtNomUp').value;
     let ape = document.getElementById('txtApeUp').value;
     let dir = document.getElementById('txtDirUp').value;
@@ -101,8 +93,6 @@ function updateClientes() {
             "crud": "up",
             "numId": id,
             "txtCi": ci,
-            "txtNdc": ndc,
-            "txtSaldo": saldo,
             "txtNom": nom,
             "txtApe": ape,
             "txtDir": dir,

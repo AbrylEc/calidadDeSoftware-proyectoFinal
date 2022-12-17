@@ -22,10 +22,11 @@ public class CBDD {
 		this.driver = "com.mysql.cj.jdbc.Driver";
 		this.user = "root";
 		this.clave = "abril010992";
-		this.cadena = "jdbc:mysql://localhost/compunet?useSSL=false";
+		this.cadena = "jdbc:mysql://localhost/proyectoCompunet?useSSL=false";
 		this.cnx = this.crearConexion();
 	}
 
+	@SuppressWarnings("deprecation")
 	private Connection crearConexion() {
 		try {
 			Class.forName(getDriver()).newInstance();
@@ -41,12 +42,7 @@ public class CBDD {
 
 		try {
 			st = getCnx().createStatement();
-			int r = st.executeUpdate(sql);
-			if (r == 1) {
-				return true;
-			} else {
-				return false;
-			}
+			return sql != null;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;

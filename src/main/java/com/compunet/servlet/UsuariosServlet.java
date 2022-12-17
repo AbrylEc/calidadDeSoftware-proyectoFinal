@@ -13,9 +13,6 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "UsuariosS", urlPatterns = "/UsuariosS")
 public class UsuariosServlet extends HttpServlet {
 
-	/**
-	* 
-	*/
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -33,7 +30,6 @@ public class UsuariosServlet extends HttpServlet {
 			ResultSet r = u.verificarUsuario(usuario, clave);
 			int cont = 0;
 
-			/* La siguiente línea está almacenando la sesión del proyecto */
 			HttpSession sesion = request.getSession();
 			while (r.next()) {
 				sesion.setAttribute("usuario", r.getString("usuario_u"));
